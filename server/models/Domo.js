@@ -2,13 +2,14 @@ module.exports.Account = require('./Account.js');
 module.exports.Domo = require('./Domo.js');
 
 const mongoose = require('mongoose');
+
 mongoose.Promise = global.Promise;
 const _ = require('underscore');
 
 let DomoModel = {};
 
 const convertId = mongoose.Types.ObjectId;
-const setName = (name) => _.escape(name).trim();
+const setName = name => _.escape(name).trim();
 
 const DomoSchema = new mongoose.Schema({
   name: {
@@ -36,7 +37,7 @@ const DomoSchema = new mongoose.Schema({
   },
 });
 
-DomoSchema.statics.toAPI = (doc) => ({
+DomoSchema.statics.toAPI = doc => ({
   name: doc.name,
   age: doc.age,
 });

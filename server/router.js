@@ -1,7 +1,7 @@
 const controllers = require('./controllers');
 const mid = require('./middleware');
 
-const router = app => {
+const router = (app) => {
   /*
   app.get('/login', controllers.Account.loginPage);
   app.post('/login', controllers.Account.login);
